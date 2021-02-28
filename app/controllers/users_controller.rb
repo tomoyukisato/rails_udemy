@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+  #ユーザ登録画面
   def new
+    #インスタンス変数追加
     @user = User.new(flash[:user])
   end
-
+  #ユーザ追加処理
   def create
     user = User.new(user_params)
     if user.save
